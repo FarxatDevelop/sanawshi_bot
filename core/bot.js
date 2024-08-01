@@ -21,7 +21,13 @@ bot.telegram.setMyCommands([
 
 const startFn = async () => {
   try {
+    app.use(
+      await bot.createWebhook({
+        domain: "https://sanawshi-bot.onrender.com",
+      })
+    );
     app.listen(PORT, () => console.log("Listening on port", PORT));
+
     await mongoose.connect(process.env.MONGODB_URL);
     bot.launch({ dropPendingUpdates: true });
   } catch (error) {
