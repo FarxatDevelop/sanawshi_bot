@@ -1,0 +1,10 @@
+require("dotenv").config();
+require("./core/bot");
+require("./schema/schema");
+require("./middlewares/index");
+require("./actions/newChatMembers");
+require("./commands/start");
+require("./commands/myMembers");
+require("./commands/yourMembers");
+require("./commands/statistika");
+require("./actions/leftChatMember");
